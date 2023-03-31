@@ -1,37 +1,35 @@
-{
-  /* 
-    <div id="parent">
-        <div id="child">
-            <h1>Hello h1</h1>
-            <h2>Hello h2</h2>
-        </div>
-        <div id="child2">
-            <h1>Hello h1</h1>
-            <h2>Hello h2</h2>
-        </div>
-    </div>; 
-
-    Reactelement(js object) => HTML(browser understand)
-
-    */
-}
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const header = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "Hello from h1 🚀"),
-    React.createElement("h2", {}, "Hello from h2 😘"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "Hello from h1"),
-    React.createElement("h2", {}, "Hello from h2"),
-  ]),
-]);
+// ReactElement = React.createElement it creates an Javascript object
+// ReactDOM = ReactDOM.createDOM it uses the browser dom
+// ReactDOM has Render in it, which render the React element into HTMLElement
+// root.render(ReactElement)
 
-console.log(header);
+// To avoid all the ReactElement creation the FB developer created JSX
+// JSX is html like syntax, JSX is not HTML in JS
+
+// React Element
+const heading = <h1 className="heading">Hello React</h1>;
+
+// React Components
+const TitleComponents = () => <h1>Hello Title component</h1>;
+
+// Heading Components
+const HeadingComponents = () => {
+  return (
+    <div id="container">
+      <TitleComponents />
+      <TitleComponents></TitleComponents>
+      {TitleComponents()}
+      {heading}
+      <h2>This is heading components</h2>
+    </div>
+  );
+};
+
+// React components
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(header);
+root.render(<HeadingComponents />);
