@@ -1,3 +1,60 @@
-#heading {
-  color: blue;
+.app {
+  width: 1640px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo {
+  width: 140px;
+}
+.nav-items {
+  display: flex;
+}
+.nav-items > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.body {
+  padding: 40px;
+}
+
+/* Resturant Card */
+.resturant-container {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.resturant-card {
+  width: 200px;
+  height: auto;
+  border: 1px solid #0000;
+  padding: 20px;
+  margin: 0 40px 0 40px;
+  box-shadow: 0px -1px 6px 4px #dadce699;
+}
+.resturant-card:hover {
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  box-shadow: 0 4px 7px 0 rgba(218, 220, 230, 0.6);
+}
+
+.resturant-card img {
+  width: 100%;
+}
+
+.search {
+  margin-bottom: 20px;
 }
